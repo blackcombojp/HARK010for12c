@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Feed>
+  <Tasks>
+    <FileUpdateTask hotswap="false" localPath="HARK010.exe" updateTo="https://webapp.iti-oliver.jp/hass/HARK010.exe">
+      <Conditions>
+        <FileVersionCondition what="below" version="0.0.2.2" />
+      </Conditions>
+    </FileUpdateTask>
+    <FileUpdateTask hotswap="false" localPath="rpt/DTN0007-01.xlsx" updateTo="https://webapp.iti-oliver.jp/hass/DTN0007-01.xlsx">
+      <Conditions>
+        <FileDateCondition type="or" what="older" timestamp="2020/03/13 00:00:00" />
+      </Conditions>
+    </FileUpdateTask>
+    <FileUpdateTask hotswap="false" localPath="rpt/DTN0006-01.xlsx" updateTo="https://webapp.iti-oliver.jp/hass/DTN0006-01.xlsx">
+      <Conditions>
+        <FileDateCondition type="or" what="older" timestamp="2020/03/13 00:00:00" />
+      </Conditions>
+    </FileUpdateTask>
+    <FileUpdateTask localPath="VBReport8.CellReport.dll" updateTo="https://webapp.iti-oliver.jp/hass/VBReport8.CellReport.dll">
+      <Conditions>
+        <FileExistsCondition type="not" />
+      </Conditions>
+    </FileUpdateTask>
+    <FileUpdateTask localPath="VBReport8.Document.dll" updateTo="https://webapp.iti-oliver.jp/hass/VBReport8.Document.dll">
+      <Conditions>
+        <FileExistsCondition type="not" />
+      </Conditions>
+    </FileUpdateTask>
+    <FileUpdateTask localPath="VBReport8.PDFWriter.dll" updateTo="https://webapp.iti-oliver.jp/hass/VBReport8.PDFWriter.dll">
+      <Conditions>
+        <FileExistsCondition type="not" />
+      </Conditions>
+    </FileUpdateTask>
+    <FileUpdateTask localPath="VBReport8.Shared.dll" updateTo="https://webapp.iti-oliver.jp/hass/VBReport8.Shared.dll">
+      <Conditions>
+        <FileExistsCondition type="not" />
+      </Conditions>
+    </FileUpdateTask>
+    <FileUpdateTask localPath="VBReport8.View.dll" updateTo="https://webapp.iti-oliver.jp/hass/VBReport8.View.dll">
+      <Conditions>
+        <FileExistsCondition type="not" />
+      </Conditions>
+    </FileUpdateTask>
+    <FileUpdateTask localPath="VBReport8.Viewer.dll" updateTo="https://webapp.iti-oliver.jp/hass/VBReport8.Viewer.dll">
+      <Conditions>
+        <FileExistsCondition type="not" />
+      </Conditions>
+    </FileUpdateTask>
+    <FileUpdateTask localPath="VBReport8.Xls.Core.dll" updateTo="https://webapp.iti-oliver.jp/hass/VBReport8.Xls.Core.dll">
+      <Conditions>
+        <FileExistsCondition type="not" />
+      </Conditions>
+    </FileUpdateTask>
+    <FileUpdateTask localPath="VBReport8.Xlsx.Core.dll" updateTo="https://webapp.iti-oliver.jp/hass/VBReport8.Xlsx.Core.dll">
+      <Conditions>
+        <FileExistsCondition type="not" />
+      </Conditions>
+    </FileUpdateTask>
+
+  </Tasks>
+</Feed>

@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E30ABAE8-37B2-4AEE-BA7C-4E8E777C9644}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>HARK010.HARK_Sub</StartupObject>
+    <RootNamespace>HARK010</RootNamespace>
+    <AssemblyName>HARK010</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>HARK010.xml</DocumentationFile>
+    <NoWarn>42017,42018,42019,42032,42036,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningsAsErrors>41998,41999,42004,42016,42020,42021,42022,42024,42025,42026,42029,42030,42031,42099,42104,42105,42106,42107,42108,42109</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>HARK010.xml</DocumentationFile>
+    <NoWarn>42017,42018,42019,42032,42036,42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41998,41999,42004,42016,42020,42021,42022,42024,42025,42026,42029,42030,42031,42099,42104,42105,42106,42107,42108,42109</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>HARK010.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GrapeCity.Framework.InputMan.v24, Version=2.4.4004.2012, Culture=neutral, PublicKeyToken=fdd90f5c44b73170" />
+    <Reference Include="GrapeCity.Framework.PlusPak.v24, Version=2.4.4004.2012, Culture=neutral, PublicKeyToken=fdd90f5c44b73170" />
+    <Reference Include="GrapeCity.Win.Editors.v100, Version=10.0.4004.2012, Culture=neutral, PublicKeyToken=0ce01a33ce55ca12, processorArchitecture=MSIL" />
+    <Reference Include="GrapeCity.Win.PlusPak.v100, Version=10.0.4004.2012, Culture=neutral, PublicKeyToken=63a9ba12b6923243, processorArchitecture=MSIL" />
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NAppUpdate.Framework">
+      <HintPath>..\..\..\NAppUpdate\src\NAppUpdate.Framework\bin\Release\net40\NAppUpdate.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=2.112.3.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\oracle\ora1220\ODP.NET\bin\4\Oracle.DataAccess.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="VBReport8.CellReport, Version=8.0.5270.2319, Culture=neutral, PublicKeyToken=a562bca15217617c, processorArchitecture=MSIL" />
+    <Reference Include="VBReport8.Document, Version=8.0.5270.2319, Culture=neutral, PublicKeyToken=5fef747f5909e4c9" />
+    <Reference Include="VBReport8.Shared, Version=8.0.5270.2319, Culture=neutral, PublicKeyToken=eb874eae9ad54445" />
+    <Reference Include="VBReport8.View, Version=8.0.5270.2319, Culture=neutral, PublicKeyToken=32543f28cb28d673" />
+    <Reference Include="VBReport8.Viewer, Version=8.0.5270.2319, Culture=neutral, PublicKeyToken=8bb5989c23433875, processorArchitecture=MSIL" />
+    <Reference Include="VBReport8.Xls.Core, Version=8.0.5270.2319, Culture=neutral, PublicKeyToken=8b8fa29264754c4a" />
+    <Reference Include="VBReport8.Xlsx.Core, Version=8.0.5270.2319, Culture=neutral, PublicKeyToken=d5c536c32e771da9" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HARK001\HARK001.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HARK001\HARK001.Designer.vb">
+      <DependentUpon>HARK001.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HARK990\HARK990.designer.vb">
+      <DependentUpon>HARK990.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HARK990\HARK990.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HARK_Runtime\HARK_Common.vb" />
+    <Compile Include="HARK_Runtime\HARK_DBCommon.vb" />
+    <Compile Include="HARK_Runtime\HARK_Define.vb" />
+    <Compile Include="HARK_Runtime\HARK_Documents.vb" />
+    <Compile Include="HARK_Runtime\HARK_Public.vb" />
+    <Compile Include="HARK_Runtime\HARK_Structure.vb" />
+    <Compile Include="HARK_Runtime\HARK_Sub.vb" />
+    <Compile Include="HARK_Runtime\HARK_Update.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="HARK001\HARK001.resx">
+      <DependentUpon>HARK001.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HARK990\HARK990.resx">
+      <DependentUpon>HARK990.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HARK010.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>

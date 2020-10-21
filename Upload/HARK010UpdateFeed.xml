@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Feed>
+  <Tasks>
+    <FileUpdateTask hotswap="false" localPath="HARK010.exe" updateTo="https://webapp.iti-oliver.jp/hass/HARK010.exe">
+      <Conditions>
+        <FileVersionCondition what="below" version="0.0.2.6" />
+      </Conditions>
+    </FileUpdateTask>
+  </Tasks>
+</Feed>

@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="WebSource" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://webapp.iti-oliver.jp/hass/HARK010UpdateFeed.xml</Value>
+    </Setting>
+    <Setting Name="WebProxy" Type="System.String" Scope="User">
+      <Value Profile="(Default)">NONE</Value>
+    </Setting>
+    <Setting Name="DBユーザ" Type="System.String" Scope="User">
+      <Value Profile="(Default)">BOV2</Value>
+    </Setting>
+    <Setting Name="DBパスワード" Type="System.String" Scope="User">
+      <Value Profile="(Default)">BOV2</Value>
+    </Setting>
+    <Setting Name="DB接続文字列" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ITI</Value>
+    </Setting>
+    <Setting Name="事業所コード" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
