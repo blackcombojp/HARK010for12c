@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E30ABAE8-37B2-4AEE-BA7C-4E8E777C9644}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>HARK010.HARK_Sub</StartupObject>
+    <StartupObject>Sub Main</StartupObject>
     <RootNamespace>HARK010</RootNamespace>
     <AssemblyName>HARK010</AssemblyName>
     <FileAlignment>512</FileAlignment>

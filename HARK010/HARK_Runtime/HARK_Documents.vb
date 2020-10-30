@@ -223,7 +223,7 @@ Public Class HARK_Documents
             For i = 0 To rdocDgv.RowCount - 1
 
                 '自社貸出は対象外
-                If CInt(rdocDgv.Rows(i).Cells(21).Value) = 9 Then
+                If CInt(rdocDgv.Rows(i).Cells(21).Value) = 9 Or CInt(rdocDgv.Rows(i).Cells(21).Value) = 1 Then
                     intCnt += 1
                     Continue For
                 End If

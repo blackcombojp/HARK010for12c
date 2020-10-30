@@ -23,6 +23,9 @@ Public Class HARK_Sub
     ' *-----------------------------------------------------------------------------/
     Public Shared Sub Main()
 
+        'TLS1.2のみ許可(Webアクセス)
+        Net.ServicePointManager.SecurityProtocol = Net.SecurityProtocolType.Tls12
+
         Dim hasHandle As Boolean = False
 
         Try

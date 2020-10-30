@@ -76,7 +76,6 @@ Partial Class HARK001
         Me.Cmb汎用 = New System.Windows.Forms.ComboBox()
         Me.Dgv = New System.Windows.Forms.DataGridView()
         Me.VBReport = New AdvanceSoftware.VBReport8.CellReport(Me.components)
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.SSBar.SuspendLayout()
         CType(Me.TLayoutContainer, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TLayoutContainer.SuspendLayout()
@@ -161,7 +160,6 @@ Partial Class HARK001
         '
         Me.Container検索.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
         Me.Container検索.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Container検索.Controls.Add(Me.ComboBox1)
         Me.Container検索.Controls.Add(Me.Bt印刷)
         Me.Container検索.Controls.Add(Me.txt需要先)
         Me.Container検索.Controls.Add(Me.Lbl需要先コード指定)
@@ -479,14 +477,6 @@ Partial Class HARK001
         '
         Me.VBReport.TemporaryPath = Nothing
         '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(95, 215)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(126, 20)
-        Me.ComboBox1.TabIndex = 104
-        '
         'HARK001
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -598,8 +588,6 @@ Partial Class HARK001
         UpdateManager.Instance.ReinstateIfRestarted()
 
     End Sub
-
-    Friend WithEvents ComboBox1 As ComboBox
 
 
 End Class
