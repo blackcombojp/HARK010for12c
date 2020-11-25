@@ -1073,6 +1073,7 @@ Public Class HARK001
         Dim Doc As Document = Nothing
         Dim i As Integer
         Dim blPrintFlg As Boolean
+        Dim intPrintChk As Integer
 
         Try
 
@@ -1120,10 +1121,19 @@ Public Class HARK001
                     blPrintFlg = False
 
                     For i = 0 To Dgv.RowCount - 1
-                        '自社貸出は対象外
-                        If CInt(Dgv.Rows(i).Cells(21).Value) = 0 Then
+
+                        '印刷チェックボックス
+                        If IsDBNull(Dgv.Rows(i).Cells(24).Value) = True Then
+                            intPrintChk = 0
+                        Else
+                            intPrintChk = CInt(Dgv.Rows(i).Cells(24).Value)
+                        End If
+
+                        '未印刷＆印刷チェックボックスON
+                        If CInt(Dgv.Rows(i).Cells(21).Value) = 0 AndAlso intPrintChk <> 0 Then
                             blPrintFlg = True
                         End If
+
                     Next
 
                     If blPrintFlg = False Then

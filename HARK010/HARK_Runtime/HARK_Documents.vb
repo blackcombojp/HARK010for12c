@@ -205,6 +205,7 @@ Public Class HARK_Documents
         Dim intDetaRowCnt As Integer
         Dim blnRecFLG As Boolean = False
         Dim dbRowHeight As Double
+        Dim intPrintChk As Integer
 
         Try
 
@@ -222,8 +223,21 @@ Public Class HARK_Documents
 
             For i = 0 To rdocDgv.RowCount - 1
 
-                '自社貸出は対象外
+                '未印刷以外は対象外
                 If CInt(rdocDgv.Rows(i).Cells(21).Value) = 9 Or CInt(rdocDgv.Rows(i).Cells(21).Value) = 1 Then
+                    intCnt += 1
+                    Continue For
+                End If
+
+                '印刷チェックボックス
+                If IsDBNull(rdocDgv.Rows(i).Cells(24).Value) = True Then
+                    intPrintChk = 0
+                Else
+                    intPrintChk = CInt(rdocDgv.Rows(i).Cells(24).Value)
+                End If
+
+                '印刷チェックボックスOFFは対象外
+                If intPrintChk = 0 Then
                     intCnt += 1
                     Continue For
                 End If

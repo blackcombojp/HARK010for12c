@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Feed>
+  <Tasks>
+    <FileUpdateTask hotswap="false" localPath="HARK010.exe" updateTo="https://delta2.iticloud.net/delta/HARK010/HARK010.exe">
+      <Conditions>
+        <FileVersionCondition what="below" version="0.0.3.0" />
+      </Conditions>
+    </FileUpdateTask>
+  </Tasks>
+</Feed>

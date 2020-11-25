@@ -1234,6 +1234,9 @@ Public Class HARK_DBCommon
             'ストアドプロシージャcall
             OraDar = New OracleDataAdapter(Oracmd)
             OraDar.Fill(OraDs, "TMP")
+            '印刷チェックボックス追加
+            OraDs.Tables("TMP").Columns.Add("印刷", Type.GetType("System.Boolean")).DefaultValue = False
+
             PO_Dgv.DataSource = OraDs.Tables("TMP")
             PO_intROWCount = PO_Dgv.RowCount
 
@@ -1396,6 +1399,7 @@ Public Class HARK_DBCommon
 
         Dim i As Integer
         Dim intCnt As Integer
+        Dim intPrintChk As Integer
         Dim ID() As Integer = Nothing
         Dim PI_01 As OracleParameter
         Dim PI_02 As OracleParameter
@@ -1416,6 +1420,18 @@ Public Class HARK_DBCommon
             For i = 0 To rdocDgv.RowCount - 1
 
                 If CInt(rdocDgv.Rows(i).Cells(21).Value) = 9 Then
+                    Continue For
+                End If
+
+                '印刷チェックボックス
+                If IsDBNull(rdocDgv.Rows(i).Cells(24).Value) = True Then
+                    intPrintChk = 0
+                Else
+                    intPrintChk = CInt(rdocDgv.Rows(i).Cells(24).Value)
+                End If
+
+                '印刷チェックボックスOFFは対象外
+                If intPrintChk = 0 Then
                     Continue For
                 End If
 

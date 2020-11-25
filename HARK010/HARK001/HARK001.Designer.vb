@@ -103,6 +103,7 @@ Partial Class HARK001
         'TSSVersion
         '
         Me.TSSVersion.AutoSize = False
+        Me.TSSVersion.BackColor = System.Drawing.SystemColors.Control
         Me.TSSVersion.Font = New System.Drawing.Font("メイリオ", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.TSSVersion.Name = "TSSVersion"
         Me.TSSVersion.Size = New System.Drawing.Size(100, 20)
@@ -110,6 +111,7 @@ Partial Class HARK001
         '
         'TSSRowCount
         '
+        Me.TSSRowCount.BackColor = System.Drawing.SystemColors.Control
         Me.TSSRowCount.Font = New System.Drawing.Font("メイリオ", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.TSSRowCount.Name = "TSSRowCount"
         Me.TSSRowCount.Size = New System.Drawing.Size(99, 20)
