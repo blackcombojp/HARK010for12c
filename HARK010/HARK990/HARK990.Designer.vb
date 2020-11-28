@@ -55,6 +55,8 @@ Partial Class HARK990
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(1024, 768)
         Me.Name = "HARK990"
+        Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Title"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
