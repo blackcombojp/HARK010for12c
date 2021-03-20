@@ -1045,6 +1045,11 @@ Public Class HARK_DBCommon
         Dim PI_09 As OracleParameter
         Dim PI_10 As OracleParameter
         Dim PI_11 As OracleParameter
+        Dim PI_12 As OracleParameter
+        Dim PI_13 As OracleParameter
+        Dim PI_14 As OracleParameter
+        Dim PI_15 As OracleParameter
+        Dim PI_16 As OracleParameter
         Dim PO_01 As OracleParameter
         Dim PO_02 As OracleParameter
         Dim PO_99 As OracleParameter
@@ -1072,6 +1077,11 @@ Public Class HARK_DBCommon
             PI_09 = Oracmd.Parameters.Add("PI_09", OracleDbType.Int32, ParameterDirection.Input)
             PI_10 = Oracmd.Parameters.Add("PI_10", OracleDbType.Varchar2, 20, DBNull.Value, ParameterDirection.Input)
             PI_11 = Oracmd.Parameters.Add("PI_11", OracleDbType.Varchar2, 20, DBNull.Value, ParameterDirection.Input)
+            PI_12 = Oracmd.Parameters.Add("PI_12", OracleDbType.Varchar2, 255, DBNull.Value, ParameterDirection.Input)
+            PI_13 = Oracmd.Parameters.Add("PI_13", OracleDbType.Varchar2, 255, DBNull.Value, ParameterDirection.Input)
+            PI_14 = Oracmd.Parameters.Add("PI_14", OracleDbType.Varchar2, 255, DBNull.Value, ParameterDirection.Input)
+            PI_15 = Oracmd.Parameters.Add("PI_15", OracleDbType.Varchar2, 255, DBNull.Value, ParameterDirection.Input)
+            PI_16 = Oracmd.Parameters.Add("PI_16", OracleDbType.Varchar2, 255, DBNull.Value, ParameterDirection.Input)
 
             'Outputパラメータ設定
             PO_01 = Oracmd.Parameters.Add("PO_01", OracleDbType.Varchar2, 255, DBNull.Value, ParameterDirection.Output)
@@ -1090,6 +1100,11 @@ Public Class HARK_DBCommon
             PI_09.Value = vbNullString
             PI_10.Value = vbNullString
             PI_11.Value = vbNullString
+            PI_12.Value = vbNullString
+            PI_13.Value = vbNullString
+            PI_14.Value = vbNullString
+            PI_15.Value = vbNullString
+            PI_16.Value = vbNullString
 
             'ストアドプロシージャcall
             Oracmd.ExecuteNonQuery()

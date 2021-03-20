@@ -1077,11 +1077,7 @@ Public Class HARK001
 
         Try
 
-            If Viewer Is Nothing Then
-
-                Viewer = New HARK990()
-
-            End If
+            If Viewer Is Nothing Then Viewer = New HARK990()
 
             If Dgv.RowCount < 1 Then
 
@@ -1167,6 +1163,10 @@ Public Class HARK001
 
             log.Error(Set_ErrMSG(Err.Number, ex.ToString))
             MsgBox(MSG_COM902 & vbCr & Err.Number & vbCr & ex.Message, MsgBoxStyle.Critical Or MsgBoxStyle.OkOnly, My.Application.Info.Title)
+
+        Finally
+
+            If Not Viewer Is Nothing Then Viewer.Dispose()
 
         End Try
 
