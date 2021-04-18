@@ -8,14 +8,15 @@ Option Compare Binary
 Option Explicit On
 Option Strict On
 
+Imports AdvanceSoftware.VBReport8
 Imports HARK010.HARK_Sub
 'Imports HARK010.HARK_Common
 Imports System.ComponentModel
 
 Public Class HARK990
 
-    Public WriteOnly Property ReportDocument() As AdvanceSoftware.VBReport8.Document
-        Set(ByVal value As AdvanceSoftware.VBReport8.Document)
+    Public WriteOnly Property ReportDocument() As Document
+        Set(value As Document)
             ViewerCtl.Document = value
         End Set
     End Property
@@ -65,6 +66,5 @@ Public Class HARK990
         End Try
 
     End Sub
-
 
 End Class

@@ -645,6 +645,10 @@ Public Class HARK001
 
                 Case "ID1" '得意先
 
+                    'データグリッドビュー初期化
+                    Dgv.DataSource = Nothing
+                    TSSRowCount.Text = MSG_COM021 & "0"
+
                     With DirectCast(Cmb得意先.SelectedItem, 得意先一覧)
                         xxxlng得意先コード = .lng得意先コード
                     End With
@@ -652,6 +656,10 @@ Public Class HARK001
                     Exit Select
 
                 Case "ID2" '需要先
+
+                    'データグリッドビュー初期化
+                    Dgv.DataSource = Nothing
+                    TSSRowCount.Text = MSG_COM021 & "0"
 
                     With DirectCast(Cmb需要先.SelectedItem, 需要先一覧)
                         xxxlng需要先コード = .lng需要先コード
@@ -1166,7 +1174,7 @@ Public Class HARK001
 
         Finally
 
-            If Not Viewer Is Nothing Then Viewer.Dispose()
+            If Viewer IsNot Nothing Then Viewer = Nothing
 
         End Try
 
