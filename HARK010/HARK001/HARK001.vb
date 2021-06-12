@@ -145,6 +145,7 @@ Public Class HARK001
             log.Info("Update_Check")
             log.Info("現在のバージョン：" & My.Application.Info.Version.ToString)
             log.Info("現在の状態：" & UpdateManager.Instance.State.ToString)
+            HARK_Update.PerForm = Me
 
             Select Case (UpdateManager.Instance.State)
 
@@ -1012,6 +1013,26 @@ Public Class HARK001
 
 
                     gblRtn = DTNP0403_PROC008(gudtプログラムマスタ.str処理関数, xxxlng得意先コード, txtDate.Text.Trim, Dgv, gintResultCnt)
+
+                    Cursor = Cursors.Default
+
+                    If gintResultCnt = 0 Then
+
+                        MsgBox(MSG_COM002, CType(MsgBoxStyle.OkOnly + MsgBoxStyle.Information, MsgBoxStyle), My.Application.Info.Title)
+                        Cmb汎用.Focus()
+                        Exit Function
+
+                    End If
+
+                    TSSRowCount.Text = MSG_COM021 & gintResultCnt
+
+                    Exit Select
+
+                Case "DTN0010" '【天神会】発注入荷状況照会
+
+                    Cursor = Cursors.WaitCursor
+
+                    gblRtn = DTNP0403_PROC010(gudtプログラムマスタ.str処理関数, 1, 0, txt商品コード.Text.Trim, Dgv, gintResultCnt)
 
                     Cursor = Cursors.Default
 

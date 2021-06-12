@@ -13,6 +13,7 @@ Imports NAppUpdate.Framework
 Public Class HARK_Update
 
     Private Shared ReadOnly log As log4net.ILog = log4net.LogManager.GetLogger(Reflection.MethodBase.GetCurrentMethod().DeclaringType)
+    Public Shared PerForm As Form
 
     Public Shared Sub Update_CheckAfterRestart()
 
@@ -63,6 +64,8 @@ Public Class HARK_Update
     End Sub
 
     Public Shared Sub Update_Prepare()
+
+        PerForm.WindowState = FormWindowState.Minimized
 
         gintMsg = MsgBox(MSG_UPD001, CType(MsgBoxStyle.OkOnly + MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Information, MsgBoxStyle), My.Application.Info.Title)
 

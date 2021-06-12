@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("アイティーアイ株式会社")>
 <Assembly: AssemblyProduct("HARK010.exe")>
-<Assembly: AssemblyCopyright("2020 ITI Corporation")>
+<Assembly: AssemblyCopyright("2021 ITI Corporation")>
 <Assembly: AssemblyTrademark("ITI Corporation")>
 
 
@@ -32,6 +32,6 @@ Imports System.Runtime.InteropServices
 ' 既定値にすることができます:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("0.0.3.2")>
-<Assembly: AssemblyFileVersion("0.0.3.2")>
+<Assembly: AssemblyVersion("0.0.3.4")>
+<Assembly: AssemblyFileVersion("0.0.3.4")>
 <Assembly: log4net.Config.XmlConfigurator(ConfigFile:="log4net.config", Watch:=True)>

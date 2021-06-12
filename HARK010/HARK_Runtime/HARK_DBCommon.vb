@@ -1524,5 +1524,96 @@ Public Class HARK_DBCommon
         End Try
 
     End Function
+    '/*-----------------------------------------------------------------------------
+    ' *　モジュール機能　：　発注入荷状況データ検索
+    ' *
+    ' *　注意、制限事項　：　なし
+    ' *　引数１　　　　　：　strProgram_ID     -- プログラム_ID
+    ' *  引数２　　　　　：　サブプログラム_ID -- サブプログラム_ID
+    ' *　引数３　　　　　：　Dgv               -- DataGridView（戻値）
+    ' *　引数４　　　　　：　ROWCount          -- 件数（戻値）
+    ' *　戻値　　　　　　：　0 -- 正常取得 2 -- レコード無 9 -- エラー
+    ' *-----------------------------------------------------------------------------/
+    Public Shared Function DTNP0403_PROC010(ByVal PI_strProgram_ID As String,
+                                            ByVal PI_intSPDSystemcode As Integer,
+                                            ByVal PI_intサブプログラム_ID As Integer,
+                                            ByVal PI_str商品コード As String,
+                                            ByRef PO_Dgv As DataGridView,
+                                            ByRef PO_intROWCount As Integer) As Boolean
+
+        Dim PI_01 As OracleParameter
+        Dim PI_02 As OracleParameter
+        Dim PI_03 As OracleParameter
+        Dim PO_01 As OracleParameter
+        Dim OraDs As New DataSet()
+
+        Try
+            DTNP0403_PROC010 = False
+
+            OraDs.Clear()
+
+            'ストアドプロシージャ設定
+            Oracmd = Oracomm.CreateCommand()
+            Oracmd.CommandText = PI_strProgram_ID
+            Oracmd.CommandType = CommandType.StoredProcedure
+
+            OraTran = Oracomm.BeginTransaction
+
+            'インプットパラメータ設定
+            PI_01 = Oracmd.Parameters.Add("PI_01", OracleDbType.Int32, ParameterDirection.Input)
+            PI_02 = Oracmd.Parameters.Add("PI_02", OracleDbType.Int64, ParameterDirection.Input)
+            PI_03 = Oracmd.Parameters.Add("PI_03", OracleDbType.Varchar2, ParameterDirection.Input)
+
+            'インプット値設定
+            PI_01.Value = PI_intSPDSystemcode
+            PI_02.Value = PI_intサブプログラム_ID
+            If IsNull(PI_str商品コード) Then
+                PI_03.Value = vbNullString
+            Else
+                PI_03.Value = PI_str商品コード
+            End If
+
+            'アウトプットパラメータ設定
+            PO_01 = Oracmd.Parameters.Add("PO_01", OracleDbType.RefCursor, ParameterDirection.Output)
+
+            'ストアドプロシージャcall
+            OraDar = New OracleDataAdapter(Oracmd)
+            OraDar.Fill(OraDs, "TMP")
+            PO_Dgv.DataSource = OraDs.Tables("TMP")
+            PO_intROWCount = PO_Dgv.RowCount
+
+            OraTran.Commit()
+
+            DTNP0403_PROC010 = True
+
+        Catch Oraex As OracleException
+
+            If Not IsNothing(OraTran) Then
+                OraTran.Rollback()
+            End If
+
+            log.Error(Set_ErrMSG(Oraex.Number, Oraex.ToString))
+            Throw
+
+        Catch ex As Exception
+
+            If Not IsNothing(OraTran) Then
+                OraTran.Rollback()
+            End If
+
+            log.Error(Set_ErrMSG(Err.Number, ex.ToString))
+            Throw
+
+        Finally
+
+            If Not IsNothing(OraTran) Then
+                OraTran.Dispose()
+            End If
+
+            Oracmd.Dispose()
+
+        End Try
+
+    End Function
 
 End Class
